@@ -1,8 +1,8 @@
 <?php
 //including the database connection file
-include_once("config.php");
+//include_once("config.php");
 //fetching data in descending order (lastest entry first)
-$result = mysqli_query($mysqli, "SELECT * FROM ideas ORDER BY id DESC"); // using mysqli_query instead
+//$result = mysqli_query($mysqli, "SELECT * FROM ideas ORDER BY id DESC"); // using mysqli_query instead
 ?>
 
 <html>
