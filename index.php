@@ -7,7 +7,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM ideas ORDER BY id DESC"); // usin
 
 <html>
 <head>	
-	<title>View Ideas</title>
+	<title>Homepage</title>
 </head>
 
 <body>
