@@ -1,1 +1,1 @@
-# TestProject
+# Suggestions Application
