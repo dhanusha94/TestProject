@@ -1,9 +1,9 @@
 <?php
  
 $databaseHost = 'localhost';
-$databaseName = 'test';
+$databaseName = 'shangout';
 $databaseUsername = 'root';
-$databasePassword = 'root';
+$databasePassword = '@connectme';
  
 $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
 ?>
