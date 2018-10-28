@@ -11,7 +11,9 @@ if(isset($_POST['Submit'])) {
 	$description = mysqli_real_escape_string($mysqli, $_POST['description']);
 	$impact = mysqli_real_escape_string($mysqli, $_POST['impact']);
 	$successmetrics = mysqli_real_escape_string($mysqli, $_POST['successmetrics']);
-	$poster = mysqli_real_escape_string($mysqli, $_POST['poster']);
+	$poster = mysqli_real_escape_string($mysqli, $_FILES['poster']['tmp_name']);
+	$file_name = $_FILES['poster']['name'];
+      
 		
 	// checking empty fields
 	if(empty($description) || empty($impact) || empty($successmetrics) || empty($poster)) {
@@ -38,11 +40,12 @@ if(isset($_POST['Submit'])) {
 		// if all the fields are filled (not empty) 
 			
 		//insert data to database	
-		$result = mysqli_query($mysqli, "INSERT INTO ideas(description,impact,successmetrics,poster,creationtime) VALUES('$description','$impact','$successmetrics','$poster','$poster')");
-        
+		$result = mysqli_query($mysqli, "INSERT INTO ideas(description,impact,successmetrics,poster,creationtime) VALUES('$description','$impact','$successmetrics','$file_name',NOW())");
+		
+		 move_uploaded_file($poster,"posters/".$file_name);
 		//display success message
 		echo "<font color='green'>Idea added successfully.";
-		echo "<br/><a href='index.html'>View Ideas</a>";
+		echo "<br/><a href='index.php'>View Ideas</a>";
 	}
 }
 ?>
